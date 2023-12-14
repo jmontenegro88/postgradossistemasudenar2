@@ -1,0 +1,60 @@
+{
+  "name": "DepartamentoSistemas",
+  "version": "1.0.0",
+  "description": "Proyecto para evento redis",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debug": "nodemon --inspect app.js",
+    "debug-brk": "nodemon --inspect-brk app.js",
+    "watch": "npm --prefix client run serve",
+    "build": "npm --prefix client run build",
+    "keys": "node keys.js",
+    "db-update": "node db-update.js",
+    "config": "node config.js",
+    "distribute": "node distribute.js",
+    "calificacion": "node calificacion.js",
+    "puestos": "node loadPuestos.js",
+    "preinscripcion": "node update-preinscripcion.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://apoteca.udenar.edu.co:82/zorcrown/redis"
+  },
+  "author": "Aulainfo",
+  "license": "ISC",
+  "dependencies": {
+    "@mdi/font": "^4.9.95",
+    "@types/vue": "^2.0.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.1",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "inquirer": "^7.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "lru-cache": "^5.1.1",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.9.1",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "path": "^0.12.7",
+    "pdfkit": "^0.11.0",
+    "pg": "^7.18.2",
+    "qrcode": "^1.4.4",
+    "sequelize": "^5.22.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^18.16.0",
+    "@types/sequelize": "^4.28.9",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "nodemon": "^2.0.13"
+  }
+}

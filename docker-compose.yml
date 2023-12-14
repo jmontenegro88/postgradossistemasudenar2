@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    logging:
+      driver: none
+    volumes:
+      - DepartamentoSistemas:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: auladeinformatica
+    ports:
+      - 5432:5432
+volumes:
+  DepartamentoSistemas:

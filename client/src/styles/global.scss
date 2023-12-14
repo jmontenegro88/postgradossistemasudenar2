@@ -1,0 +1,175 @@
+@import '~vuetify/src/styles/settings/variables';
+
+@mixin card($width) {
+  width: $width;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 20px !important;
+
+  @media (max-width: $width) {
+    min-height: 100%;
+  }
+
+  @media (min-width: $width) {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+.local-card {
+  @include card(1000px);
+}
+
+.small-card {
+  @include card(700px);
+}
+
+.roles {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.local-form {
+  .v-input--has-state {
+    margin-bottom: 15px !important;
+  }
+}
+
+// .v-toolbar__content, .v-toolbar__extension  {
+//   background: var();
+// }
+
+.card-title-text {
+  display: inline-block;
+  margin-top: 30px;
+  white-space: normal !important;
+
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    font-size: 1.85rem;
+  }
+}
+
+.card-title-text::after {
+  content: '';
+  display: block;
+  margin: 0.5em auto 0px;
+  width: 75%;
+  border-bottom: 1px solid;
+}
+
+body {
+  font-family: $body-font-family;
+}
+
+.register-dialog {
+  .card-center {
+    padding-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
+    margin: 30px;
+  }
+
+  .center-title {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: black !important;
+  }
+  .register-form-stepper {
+    box-shadow: none !important;
+  }
+
+  .register-form-step-content {
+    padding: 0px 16px 16px !important;
+  }
+
+  .tf-m {
+    margin-top: 5px !important;
+  }
+
+  .v-card__title {
+    display: grid;
+    align-items: center;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .font-20 {
+    font-size: 20px !important;
+  }
+
+  .btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .btn-danger {
+    color: #fff;
+    background: #dc3545;
+  }
+
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .btn-success:hover {
+    background: #279441;
+  }
+
+  .btn-danger:hover {
+    background: #c93140;
+  }
+
+  .head {
+    color: #36658E;
+    margin-bottom: 15px;
+  }
+
+  hr {
+    color: black;
+    margin: 0px 20px 20px 20px;
+  }
+
+  .marck-2 {
+    border: solid 1px black;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+
+  .marck {
+    margin-top: 5px;
+  }
+
+  .swal2-actions {
+    margin: 0px;
+  }
+
+  .keep-all {
+    word-break: keep-all !important;
+  }
+
+  @media (max-width: 320px) {
+    .center {
+      text-align: center !important;
+    }
+  }
+}

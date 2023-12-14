@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "watch": ["./*.{js,.env}", "server/", "shared/"],
+  "ignore": ["client/"]
+}

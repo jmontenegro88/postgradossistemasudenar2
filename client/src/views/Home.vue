@@ -3,7 +3,7 @@
     <v-card class="small-card" elevation="6" v-if="rol" >
       <b>Rol Seleccionado:</b> {{ rol.descripcion }}
     </v-card>
-    <Docente />
+    <Docente v-if="rol && rol.codigo=='PCTE'" />
     <v-dialog v-model="showModal" width="750px" persistent>
       <v-card class="small-card" elevation="6">
         <h3>Selecciona uno de los roles que tienes disponible:</h3>

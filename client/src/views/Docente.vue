@@ -1,6 +1,14 @@
 <template>
   <Worker filter="docente" auth>
-    <v-card class="small-card" elevation="6">
+    
+    <PairRow>
+      <template v-slot:first>
+        <v-btn type="submit" outlined v-if="!esCreacion" @click="setEsCreacion">
+          Crear Docente
+        </v-btn>
+      </template>
+    </PairRow>
+    <v-card class="small-card" elevation="6" v-if="esCreacion">
       <v-card-title class="display-1 font-weight-thin justify-center mb-6">
         <div class="card-title-text">Creación de docentes</div>
       </v-card-title>
@@ -117,6 +125,7 @@ export default FormContainer.extend({
     PairRow,
   },
   data: () => ({
+    esCreacion: false,
     nombres: '',
     apellidos: '',
     dni: '',
@@ -154,6 +163,11 @@ export default FormContainer.extend({
       if (!result) {
         return;
       }
+      this.$router.push("/");
+      this.esCreacion = false
+    },
+    setEsCreacion() {
+      this.esCreacion = !this.esCreacion
     },
     updateEva(eva: any) {
       this.selectEva = eva;

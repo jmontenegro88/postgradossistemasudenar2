@@ -74,6 +74,43 @@ const sessionModule: Module<SessionModuleState, any> = {
           return result
         }
       ),
+    docente: (
+      context,
+      data: any
+    ) =>
+      doWork(
+        context,
+        'docente',
+        async (): Promise<LoginResult | null> => {
+          const { commit } = context
+          let result: LoginResult
+
+          try {
+            result = await sesionService.docente(data)
+            if (!result.error && !result.token) {
+              throw new Error('No se obtuvo ningún token')
+            }
+          } catch (err) {
+            showAlert(commit, {
+              type: 'error',
+              message: 'No fue posible crear al docente',
+            })
+            return null
+          }
+
+          if (!result.error) {
+            hideAlert(commit)
+            sesionService.token = result.token || null
+          } else {
+            showAlert(commit, {
+              type: 'error',
+              message: result.error,
+            })
+          }
+
+          return result
+        }
+      ),
 
     authenticate: (context, token?: string | null) =>
       doWork(context, 'authenticate', async () => {

@@ -3,6 +3,7 @@
     <v-card class="small-card" elevation="6" v-if="rol" >
       <b>Rol Seleccionado:</b> {{ rol.descripcion }}
     </v-card>
+    <Docente />
     <v-dialog v-model="showModal" width="750px" persistent>
       <v-card class="small-card" elevation="6">
         <h3>Selecciona uno de los roles que tienes disponible:</h3>
@@ -30,6 +31,7 @@ import SectionsContainer from "../mixins/sections-container";
 import API from "../services/api";
 import { mapState } from "vuex";
 import PairRow from "@/components/PairRow.vue";
+import Docente from "./Docente.vue";
 
 export interface Network {
   icon: string;
@@ -42,6 +44,7 @@ export default SectionsContainer.extend({
   components: {
     SectionCard,
     PairRow,
+    Docente
   },
 
   data: () => ({

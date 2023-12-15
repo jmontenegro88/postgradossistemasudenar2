@@ -7,6 +7,12 @@ export interface LoginResult {
   code?: string
 }
 
+export interface DocenteResult {
+  ok?: any
+  error?: string
+  code?: string
+}
+
 export interface AuthResult {
   usuario: any
   admin?: boolean
@@ -31,6 +37,11 @@ export const sesionService = {
       email,
       password,
     })
+    return data as LoginResult
+  },
+
+  async docente(datos: any): Promise<DocenteResult> {
+    const { data } = await API.postRequest('/sesion/docente', datos)
     return data as LoginResult
   },
 

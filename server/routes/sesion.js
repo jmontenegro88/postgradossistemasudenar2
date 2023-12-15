@@ -6,6 +6,7 @@ const { UserInputError } = require('../lib/errors')
 const { sendJsonResponse } = require('../lib/helpers/express-helpers')
 const { verificarToken } = require('../middleware/autenticacion')
 const authService = require('../services/auth')
+const docenteService = require('../services/docente')
 
 router.post('/login', (req, res) => {
   sendJsonResponse(res, async () => {
@@ -32,6 +33,22 @@ router.post('/login', (req, res) => {
     }
   })
 })
+
+router.post("/docente", (req, res) => {
+  sendJsonResponse(res, async () => {
+    const data = req.body;
+    try {
+      if (!data) {
+        throw new UserInputError.ERR_NO_PASSWORD();
+      }
+      await docenteService.create(data);
+      return { ok: true };
+    } catch (err) {
+      console.log(err)
+      return { ok: false };
+    }
+  });
+});
 
 router.post('/autenticar', verificarToken, (req, res) => {
   const { usuario, sesion } = req
